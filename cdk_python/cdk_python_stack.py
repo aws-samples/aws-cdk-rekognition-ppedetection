@@ -79,6 +79,13 @@ class CdkPythonStack(Stack):
                         "s3:ListBucket"
                     ],
                     resources=[f"arn:aws:s3:::{bucket.bucket_name}/*"]
+                ),
+                iam_.PolicyStatement(
+                    effect=iam_.Effect.ALLOW,
+                    actions=[
+                        "s3:GetLayerVersion"
+                    ],
+                    resources=[f"arn:aws:lambda:us-west-2:426241882362:layer:publicpexiflayer:1"]
                 )
             ]
         )
@@ -117,13 +124,6 @@ class CdkPythonStack(Stack):
                         "s3:ListBucket"
                     ],
                     resources=[f"arn:aws:s3:::{bucket.bucket_name}/*"]
-                ),
-                iam_.PolicyStatement(
-                    effect=iam_.Effect.ALLOW,
-                    actions=[
-                        "s3:GetLayerVersion"
-                    ],
-                    resources=[f"arn:aws:lambda:us-west-2:426241882362:layer:publicpexiflayer:1"]
                 )
             ]
         )
