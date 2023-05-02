@@ -3,9 +3,7 @@
 
 Architecture Diagram 
 
-
-
-![](../../PPEDetectArchitecture.png)
+![Alt text](/PPEDetectArchitecture.png "Architecture Diagram")
 
 Project creates AWS reosurce stack to perform PPE detection on images and geo index images. After deployment, S3 bucket created can be used to upload images for PPE Detection. Some sample images to detect for people wearing helmets and GPS co-ordinates indexed are availble.
 
