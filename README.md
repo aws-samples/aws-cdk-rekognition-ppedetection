@@ -5,7 +5,13 @@ Architecture Diagram
 
 ![Alt text](/ArchitectureDiagram.svg "Architecture Diagram")
 
-Project creates AWS reosurce stack to perform PPE detection on images and geo index images. After deployment, S3 bucket created can be used to upload images for PPE Detection. Some sample images to detect for people wearing helmets and GPS co-ordinates indexed are availble.
+Project creates AWS reosurce stack to perform PPE detection on images and geo index images to DynamoDB table. After deployment, S3 bucket created can be used to upload images for PPE Detection. Some sample images to detect for people wearing helmets and GPS co-ordinates indexed are availble.
+
+Note : You can use CloudTrail data events to get information about bucket and object-level requests in Amazon S3. To enable CloudTrail data events for all of your buckets or for a list of specific buckets, you must create a trail manually in CloudTrail.
+
+Stack uses a public lambda layer in us-west-2 region, CDK deployment in same region will avoid permission erros to fetch this layer. Workaround will be to import this layer into different region in your account to deploy the stack.
+
+CDK Instructions
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
